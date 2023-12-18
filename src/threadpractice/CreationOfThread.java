@@ -11,8 +11,14 @@ public class CreationOfThread {
 	//It will not allow other thread to run untill it dies.
 	th.join();
 	th2.start();
+	/*
+	 * Can we start a thread twice?
+	 * No we cannot run the Thread Twice. If we try to run the thread. It will throw and 
+	 * illegalArgument Exception.
+	 * */
 	
 	}
+
 }
 
 class Task implements Runnable {
@@ -22,6 +28,11 @@ class Task implements Runnable {
 		System.out.println("Running Task 1");
 		try {
 			Thread.sleep(2000);
+			/*Thread sleep:-
+			 * Sleep method in the thread provides the current thread to wait for the
+			 * some time and start its execution after the waiting tim
+			 * 
+			 * */
 			System.out.println("Current Thread" + Thread.currentThread().getName());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -45,3 +56,4 @@ class Task2 implements Runnable {
 		System.out.println("Task 2 Ended");
 	}
 }
+
